@@ -1,7 +1,7 @@
 # YMGK
 
 ## Project Overview
-AR_Project is an Augmented Reality application developed as part of the Software Engineering Current Topics course. 
+YMGK is an Augmented Reality application developed as part of the Software Engineering Current Topics course. 
 
 ## Technologies Used
 - Unity 2022.3.51f1
