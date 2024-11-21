@@ -18,5 +18,11 @@ YMGK is an Augmented Reality application developed as part of the Software Engin
 ## Project Management
 I am using Trello for project management and task tracking. You can view the project board [here](https://trello.com/b/4pU2Hcnh/ymgk).
 
+## Web Page
+This project includes a web page containing additional information and features. You can access it [here](https://asudetimur.github.io/YMGK/).  
+
+## License
+This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.  
+
 ## Contact
 For any queries regarding this project, please contact me at asudetimur@gmail.com or through my GitHub profile.
