@@ -1,29 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class HumanController : MonoBehaviour
 {
-    public TMP_Text answerText; // İnsan objesindeki sayı text'i
-    private int answer;         // Sayı (cevap)
+    public TMP_Text answerText;
+    public int AnswerValue { get; set; }
 
-    // Sayıyı ayarla
-    public void SetAnswer(int value)
+    public void SetAnswerText(int answer)
     {
-        answer = value;
-        answerText.text = value.ToString(); // TMP_Text'e sayıyı yaz
+        answerText.text = answer.ToString();
     }
 
-    // Sayıyı döndür
-    public int GetAnswer()
+    public void HighlightText(Color color)
     {
-        return answer;
+        answerText.color = color;
     }
 
-    // İnsana tıklanınca çağrılır
-    void OnMouseDown()
+    public void ResetState()
     {
-        FindObjectOfType<GameManager>().OnSelectHuman(this); // GameManager'a bildir
+        answerText.color = Color.white; // Rengi sıfırla
+    }
+
+    private void OnMouseDown()
+    {
+        FindObjectOfType<GameManager>().OnHumanClicked(this);
     }
 }
