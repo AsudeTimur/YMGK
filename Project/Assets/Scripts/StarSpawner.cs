@@ -3,8 +3,8 @@ using System.Linq;
 
 public class StarSpawner : MonoBehaviour
 {
-    public Transform[] spawnPoints;
-    public GameObject[] starPrefabs;
+    public Transform[] spawnPoints; // Spawn noktalarını içeren dizi
+    public GameObject[] starPrefabs; // Yıldız prefab'larını içeren dizi
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class StarSpawner : MonoBehaviour
         }
 
         // Tıklama bileşeni ekle
-        StarClickDetector clickDetector = star.AddComponent<StarClickDetector>();
+        star.AddComponent<StarClickDetector>();
     }
 }
 
@@ -43,6 +43,9 @@ public class StarClickDetector : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        Debug.Log("Yıldıza tıklandı!");
+        Debug.Log($"{gameObject.name} yıldızına tıklandı ve kayboldu!");
+        
+        // Yıldızı yok et
+        Destroy(gameObject);
     }
 }
