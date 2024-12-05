@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim - Uçak İçi Eğlence</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -20,9 +21,49 @@
         </nav>
     </header>
 
+    <section id="contacts">
+        <div>
+            <h1>Bizimle İletişime Geçin</h1>
+        </div>
+    </section>
+
     <section id="contact">
-        <h2>İletişim</h2>
-        <p>Bizimle iletişime geçmek için <a href="mailto:info@ucakeglence.com">info@ucakeglence.com</a> adresine e-posta gönderebilirsiniz.</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Bize Ulaşın</h3>
+                <div class="logo-contact">
+                    <img src="arLogo.png" alt="AR Oyunları Logo"> <!-- Logo Burada -->
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p><a href="mailto:asudetimur7@gmail.com">asudetimur7@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <p><a href="https://www.linkedin.com/in/asudetimur/" target="_blank">linkedin.com/in/asudetimur</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <p><a href="https://github.com/AsudeTimur/YMGK" target="_blank">github.com/AsudeTimur</a></p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Bize Mesaj Gönderin</h3>
+                <form action="mailto:info@ucakeglence.com" method="post" enctype="text/plain">
+                    <label for="name">Adınız:</label>
+                    <input type="text" id="name" name="name" placeholder="Adınızı girin" required>
+
+                    <label for="email">E-posta:</label>
+                    <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required>
+
+                    <label for="message">Mesajınız:</label>
+                    <textarea id="message" name="message" placeholder="Mesajınızı buraya yazın..." rows="5" required></textarea>
+
+                    <button type="submit">Gönder</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <footer>

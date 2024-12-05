@@ -37,6 +37,19 @@ header {
   height: auto;
 }
 
+/* İletişim sayfasındaki logo */
+.logo-contact {
+  display: flex;
+  justify-content: center;  /* Yatayda ortalama */
+  align-items: center;      /* Dikeyde ortalama */
+  margin-bottom: 20px;
+}
+
+.logo-contact img {
+  max-width: 200px;  /* Logonun maksimum genişliğini artırıyoruz */
+  height: auto;      /* Yüksekliği orantılı olarak ayarlıyoruz */
+}
+
 nav {
   background-color: white;
 }
@@ -160,31 +173,24 @@ nav ul li a:hover {
   overflow: hidden;
 }
 
-#home .intro-container {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  max-width: 1000px;
-  margin: 0 auto;
+/* Ortak Stil */
+#home, #about-section, #contacts {
+  padding: 20px;
 }
 
-#home h1 {
+#home h1, #about-section h1, #contacts h1 {
   font-size: 4rem;
-  font-weight: bold;
   color: #FF8298;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
 }
 
-#home h2 {
-  font-size: 2rem;
-  color: #FF8298;
-  font-weight: 600;
-  margin-top: 5px;
+#home p, #about-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-#home p {
+
+#home p, .about-section p{
   font-size: 1.2rem;
   color: #000;
   max-width: 800px;
@@ -214,6 +220,23 @@ nav ul li a:hover {
   padding: 40px 20px;
 }
 
+#about-secition h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #FF8298;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+#about-section p {
+  font-size: 1.2rem; /* Yazı boyutu */
+  line-height: 1.6;  /* Satır aralığı */
+  max-width: 1200px; /* Genişliği artır */
+  margin: 20px auto; /* Ortala */
+  text-align: justify; /* Daha düzgün hizalama için */
+  padding: 0 20px; /* Sağ ve sol boşluk */
+}
+
 .about-section {
   margin-bottom: 30px;
   background-color: #f9f9f9;
@@ -227,7 +250,15 @@ nav ul li a:hover {
   height: 100%;                 /* Yüksekliği 100% yaptık ki içerik tam ortalansın */
 }
 
-.about-section h2, .about-section h3 {
+.about-section h2{
+  font-size: 4rem;
+  font-weight: bold;
+  color: #FF8298;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.about-section h3 {
   color: #FF8298;
   font-size: 2rem;
   margin-bottom: 15px;
@@ -235,7 +266,7 @@ nav ul li a:hover {
 
 .about-section p, .about-section ul {
   font-size: 1rem;
-  color: #555;
+  color: black;
   line-height: 1.6;
   text-align: center;          /* Yazıyı ortaladık */
 }
@@ -263,6 +294,93 @@ nav ul li a:hover {
   margin-bottom: 20px;
   height: auto; /* Yükseklik otomatik ayarlandı */
 }
+
+/* İletişim Sayfası */
+#contact {
+  padding: 50px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.contact-info, .contact-form {
+  width: 45%;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.contact-info h3, .contact-form h3 {
+  font-size: 24px;
+  color: #FF8298;
+  margin-bottom: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  text-align: center; 
+  margin-bottom: 15px;
+}
+
+.contact-item i {
+  font-size: 20px;
+  color: black;
+  margin-right: 10px;
+}
+
+.contact-item a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #CB8298;
+}
+
+.contact-form form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form form input, 
+.contact-form form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.contact-form form button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form form button:hover {
+  background-color: #CB8298;
+}
+
 
 /* Footer */
 footer {
