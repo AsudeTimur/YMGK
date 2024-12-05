@@ -1,31 +1,79 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Çocuklar İçin Uçak İçi Eğlence</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Oyunları - Uçak İçi Eğlence</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>☁️ Bulut Maceraları ☁️</h1>
-    <h4>🛫 Uçak İçi Eğlence Sistemi 🛫</h4>
-    <p>Gökyüzünde macera dolu bir yolculuk!</p>
-  
-  
-  <section class="content">
-    <div class="activity" onclick="showAnimation('ar')">
-      <img src="arLogo.png" alt="AR Deneyimi">
-      <h2>AR Deneyimi</h2>
-    </div>
-  </section>
-  
-  <div id="animation" class="overlay" onclick="hideAnimation()">
-    <div class="animation-content">
-      <h3>Yükleniyor...</h3>
-      <p>Birazdan başlayacak!</p>
-    </div>
-  </div>
-  
-  <script src="script.js"></script>
+    <header>
+        <div class="logo">
+            <img src="arLogo.png" alt="AR Oyunları Logo"> <!-- Logo Burada -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#games">Oyunlar</a></li>
+                <li><a href="#about">Hakkında</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="intro">
+            <h2>Hoş Geldiniz!</h2>
+            <p>Uçak yolculuklarınızda eğlenmek ve öğrenmek için AR tabanlı oyunlarımızla tanışın. Oyunlarımız çocuklara eğlenceli ve öğretici bir deneyim sunuyor.</p>
+        </div>
+    </section>
+
+    <section id="games">
+        <h2>Oyunlarımız</h2>
+        <div class="games">
+          <div class="game-card">
+              <img src="game1.webp" alt="Balık Tutma Oyunu">
+              <div class="card-content">
+                  <h3>Balık Tutma</h3>
+                  <p>Balık tutma oyununu oynayarak deniz canlıları hakkında bilgi edinin!</p>
+              </div>
+          </div>
+          <div class="game-card">
+              <img src="game2.jpeg" alt="Saklambaç Oyunu">
+              <div class="card-content">
+                  <h3>Saklambaç</h3>
+                  <p>Denizin derinliklerinde kaybolan deniz yıldızlarını bul!</p>
+              </div>
+          </div>
+      </div>
+      
+    </section>
+
+    <section id="about">
+        <h2>Hakkında</h2>
+        <p>Bu oyunlar, çocukların uçak yolculuklarında eğlenceli vakit geçirmeleri için tasarlanmıştır. Artırılmış gerçeklik (AR) teknolojisi ile gerçek dünyayı sanal dünyaya entegre ederek eğlenceli deneyimler sunuyoruz.</p>
+    </section>
+
+    <section id="contact">
+        <h2>İletişim</h2>
+        <p>Bizimle iletişime geçmek için <a href="mailto:info@ucakeglence.com">info@ucakeglence.com</a> adresine e-posta gönderebilirsiniz.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Uçak İçi Eğlence. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        // Oyun detaylarını gösterme fonksiyonu
+        function showDetails(game) {
+            let message = "";
+            if (game === "fish") {
+                message = "Balık Tutma oyunu, denizin derinliklerinde balıkları yakalamaya çalışırken çocukların dikkatini ve el-göz koordinasyonunu geliştirir. AR teknolojisi ile daha gerçekçi bir deneyim sunar.";
+            } else if (game === "hide") {
+                message = "Saklambaç oyununda, çocuklar deniz yıldızlarını bulmak için ipuçlarını takip eder. Bu oyun, çocukların problem çözme becerilerini geliştirir ve eğlenceli bir keşif yolculuğu sunar.";
+            }
+            alert(message);
+        }
+    </script>
 </body>
 </html>

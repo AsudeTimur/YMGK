@@ -1,102 +1,123 @@
+/* Genel Ayarlar */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Comic Sans MS', sans-serif;
-  background: linear-gradient(to right, #FFDEE9, #B5FFFC);
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* Beyaz arka plan */
   color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  text-align: center; /* Yazıları ortalamak için */
+  text-align: center;
 }
 
+/* Header ve Logo */
 header {
-  text-align: center;
-  padding: 20px;
-  background-color: #FFB6C1;
-  width: 100%;
-  color: #333;
+  background-color: white; /* Header'ın arka planı beyaz */
+  color: white;
+  padding: 20px 20px 20px 20px; /* Üst, sağ, alt, sol kenarlara 20px boşluk */
+  display: flex;
+  justify-content: flex-start; /* Sol tarafa hizala */
+  align-items: center; /* Yükseklik hizalaması */
 }
 
-header h1 {
-  font-size: 2.5rem;
-  color: #FF69B4;
+.logo {
+  text-align: left;
+  margin-left: 20px; /* Sol tarafa biraz boşluk ekleyelim */
 }
 
-header p {
-  font-size: 1.2rem;
+.logo img {
+  max-width: 100px; /* Logonun boyutunu küçültme */
+  height: auto; /* Yüksekliği orantılı olarak ayarla */
 }
 
-.content {
+.logo p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Navbar */
+nav {
+  background-color: white; /* Navbarın arka planı beyaz */
+}
+
+nav ul {
+  list-style-type: none;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Tüm kutucukları dikeyde ortalamak için */
-  max-width: 800px;
   margin-top: 20px;
+  padding: 0;
+  width: 100%;
+  max-width: 800px; /* Navbar genişliğini küçülttük */
+  margin: 0 auto; /* Ortalayacağız */
 }
 
-.activity {
-  margin: 15px;
-  padding: 40px;
-  text-align: center;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, background-color 0.3s;
-  cursor: pointer;
+nav ul li {
+  margin: 0 15px; /* Navbar linkleri arasındaki boşluk */
+}
+
+nav ul li a {
+  color: #FFDEE9; /* Yazı rengi pembe (verdiğiniz renk kodu) */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #B5FFFC; /* Hover rengi bebek mavisi (verdiğiniz renk kodu) */
+}
+
+/* Oyun Kartları */
+.games {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Kartlar arasındaki boşluk */
+  margin-top: 40px;
 }
 
-.activity:hover {
-  transform: scale(1.1);
-  background-color: #FFB6C1;
+.game-card {
+  background-color: white;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.activity img {
-  width: 200px;
-  height: 200px;
+.game-card:hover {
+  transform: scale(1.05); /* Hoverda kart biraz büyür */
+}
+
+.game-card img {
+  width: 100%;
+  height: 150px; /* Fotoğrafın yüksekliği */
+  object-fit: cover; /* Fotoğrafın orantılı şekilde kesilmesini sağlar */
+}
+
+.game-card .card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.game-card h3 {
+  font-size: 20px;
+  color: #FFDEE9; /* Pembe başlık rengi */
   margin-bottom: 10px;
 }
 
-.activity h2 {
-  font-size: 2rem;
+.game-card p {
+  font-size: 14px;
   color: #333;
 }
 
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-.overlay.active {
-  display: flex;
-}
-
-.animation-content {
-  background: #fff;
+/* Footer */
+footer {
+  background-color: #FFDEE9; /* Çok açık şeker pembesi */
+  color: white;
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 300px;
-}
-
-.animation-content h3 {
-  color: #FF69B4;
-  font-size: 1.8rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

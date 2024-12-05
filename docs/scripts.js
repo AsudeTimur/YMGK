@@ -1,21 +1,10 @@
-function showAnimation(activity) {
-    const animationDiv = document.getElementById('animation');
-    animationDiv.classList.add('active');
-    
-    const content = document.querySelector('.animation-content h3');
-    if (activity === 'games') {
-      content.innerText = "Oyunlar Açılıyor! 🎮";
-    } else if (activity === 'videos') {
-      content.innerText = "Videolar Açılıyor! 📺";
-    } else if (activity === 'stories') {
-      content.innerText = "Hikayeler Yükleniyor! 📖";
-    } else if (activity === 'ar') {
-      content.innerText = "AR Deneyimi Başlıyor! 🌐";
-    }
+// Oyun detaylarını gösterme fonksiyonu
+function showDetails(game) {
+  let message = "";
+  if (game === "fish") {
+      message = "Balık Tutma oyunu, denizin derinliklerinde balıkları yakalamaya çalışırken çocukların dikkatini ve el-göz koordinasyonunu geliştirir. AR teknolojisi ile daha gerçekçi bir deneyim sunar.";
+  } else if (game === "hide") {
+      message = "Saklambaç oyununda, çocuklar deniz yıldızlarını bulmak için ipuçlarını takip eder. Bu oyun, çocukların problem çözme becerilerini geliştirir ve eğlenceli bir keşif yolculuğu sunar.";
   }
-  
-  function hideAnimation() {
-    const animationDiv = document.getElementById('animation');
-    animationDiv.classList.remove('active');
-  }
-  
+  alert(message);
+}
