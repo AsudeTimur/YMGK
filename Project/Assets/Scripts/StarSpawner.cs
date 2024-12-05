@@ -1,55 +1,113 @@
 using UnityEngine;
+using TMPro;
 using System.Linq;
 
-public class StarSpawner : MonoBehaviour
+public class StarGame : MonoBehaviour
 {
-    public Transform[] spawnPoints; // Spawn noktalarını içeren dizi
-    public GameObject[] starPrefabs; // Yıldız prefab'larını içeren dizi
-    private int remainingStars; // Kalan yıldız sayısını takip etmek için
+    public Transform[] spawnPoints; // Spawn noktaları
+    public GameObject[] starPrefabs; // Yıldız prefab'ları
+    public TextMeshProUGUI scoreText; // Skor göstergesi
+
+    private int remainingStars; // Kalan yıldız sayısı
+    private int score; // Toplam puan
 
     void Start()
     {
-        StartNewRound();
+        score = 0; // Skoru sıfırla
+        UpdateScoreUI();
+        StartNewRound(); // İlk turu başlat
+    }
+
+    void Update()
+    {
+        // Mouse sol tuşuna basıldığında tıklama kontrolü yap
+        if (Input.GetMouseButtonDown(0))
+        {
+            DetectClick();
+        }
+    }
+
+    void DetectClick()
+    {
+        // Tıklanan nesneyi algıla
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.transform.CompareTag("Star"))
+            {
+                Debug.Log($"Yıldıza tıklandı: {hit.transform.name}");
+                Destroy(hit.transform.gameObject);
+                HandleStarClick();
+            }
+            else
+            {
+                Debug.Log("Yanlış bir nesneye tıklandı!");
+                HandleEmptySpaceClick();
+            }
+        }
+        else
+        {
+            Debug.Log("Boş bir alana tıklandı!");
+            HandleEmptySpaceClick();
+        }
+    }
+
+    void UpdateScoreUI()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = $"Score: {score}";
+        }
     }
 
     void StartNewRound()
     {
-        // Yıldızları spawn et ve kalan yıldız sayısını sıfırla
-        SpawnStars();
-        remainingStars = 5; // Her turda 5 yıldız var
+        ClearOldStars(); // Önceki yıldızları temizle
+        SpawnRandomStars(5); // 5 rastgele yıldız oluştur
+        remainingStars = 5; // Her turda 5 yıldız
     }
 
-    void SpawnStars()
+    void SpawnRandomStars(int count)
     {
-        var shuffledSpawnPoints = spawnPoints.OrderBy(x => Random.value).Take(5).ToArray();
+        var randomSpawnPoints = spawnPoints.OrderBy(x => Random.value).Take(count).ToArray();
 
-        for (int i = 0; i < shuffledSpawnPoints.Length; i++)
+        foreach (var spawnPoint in randomSpawnPoints)
         {
             GameObject randomStarPrefab = starPrefabs[Random.Range(0, starPrefabs.Length)];
-            GameObject spawnedStar = Instantiate(randomStarPrefab, shuffledSpawnPoints[i].position, Quaternion.identity, shuffledSpawnPoints[i]);
-            
-            // Collider ekle
+            GameObject spawnedStar = Instantiate(randomStarPrefab, spawnPoint.position, Quaternion.identity, spawnPoint);
+
+            // Yıldıza "Star" tag'i ekle
+            spawnedStar.tag = "Star";
             AddCollider(spawnedStar);
         }
     }
 
-    void AddCollider(GameObject star)
+    void AddCollider(GameObject obj)
     {
-        if (star.GetComponent<Collider>() == null)
+        if (obj.GetComponent<Collider>() == null)
         {
-            BoxCollider boxCollider = star.AddComponent<BoxCollider>();
+            BoxCollider boxCollider = obj.AddComponent<BoxCollider>();
             boxCollider.isTrigger = true;
         }
-
-        // Tıklama bileşeni ekle ve StarClickDetector'e tur referansı ver
-        StarClickDetector clickDetector = star.AddComponent<StarClickDetector>();
-        clickDetector.OnStarClicked = OnStarClicked;
     }
 
-    // Bir yıldız tıklandığında çağrılır
-    void OnStarClicked()
+    void ClearOldStars()
     {
-        remainingStars--;
+        foreach (Transform spawnPoint in spawnPoints)
+        {
+            foreach (Transform child in spawnPoint)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+    }
+
+    void HandleStarClick()
+    {
+        score += 10; // Puan ekle
+        remainingStars--; // Kalan yıldız sayısını azalt
+
+        UpdateScoreUI();
 
         if (remainingStars <= 0)
         {
@@ -57,20 +115,12 @@ public class StarSpawner : MonoBehaviour
             StartNewRound(); // Yeni bir tur başlat
         }
     }
-}
 
-public class StarClickDetector : MonoBehaviour
-{
-    public System.Action OnStarClicked; // Tıklama olayını takip eden callback
-
-    private void OnMouseDown()
+    void HandleEmptySpaceClick()
     {
-        Debug.Log($"{gameObject.name} yıldızına tıklandı ve kayboldu!");
-        
-        // Yıldızı yok et
-        Destroy(gameObject);
+        score -= 5; // Puan çıkar
+        if (score < 0) score = 0; // Puanı sıfırın altına indirme
 
-        // Tıklama olayını bildir
-        OnStarClicked?.Invoke();
+        UpdateScoreUI();
     }
 }
