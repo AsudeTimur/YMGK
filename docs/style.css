@@ -16,30 +16,24 @@ body {
 header {
   background-color: white; /* Header'ın arka planı beyaz */
   color: white;
-  padding: 20px 20px 20px 20px; /* Üst, sağ, alt, sol kenarlara 20px boşluk */
+  padding: 20px;
   display: flex;
-  justify-content: flex-start; /* Sol tarafa hizala */
-  align-items: center; /* Yükseklik hizalaması */
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .logo {
   text-align: left;
-  margin-left: 20px; /* Sol tarafa biraz boşluk ekleyelim */
+  margin-left: 20px;
 }
 
 .logo img {
-  max-width: 100px; /* Logonun boyutunu küçültme */
-  height: auto; /* Yüksekliği orantılı olarak ayarla */
+  max-width: 100px;
+  height: auto;
 }
 
-.logo p {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-/* Navbar */
 nav {
-  background-color: white; /* Navbarın arka planı beyaz */
+  background-color: white;
 }
 
 nav ul {
@@ -49,16 +43,16 @@ nav ul {
   margin-top: 20px;
   padding: 0;
   width: 100%;
-  max-width: 800px; /* Navbar genişliğini küçülttük */
-  margin: 0 auto; /* Ortalayacağız */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 nav ul li {
-  margin: 0 15px; /* Navbar linkleri arasındaki boşluk */
+  margin: 0 15px;
 }
 
 nav ul li a {
-  color: #FFDEE9; /* Yazı rengi pembe (verdiğiniz renk kodu) */
+  color: #FFDEE9;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
@@ -66,55 +60,94 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #B5FFFC; /* Hover rengi bebek mavisi (verdiğiniz renk kodu) */
+  color: #B5FFFC;
 }
 
 /* Oyun Kartları */
 .games {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Kartlar arasındaki boşluk */
+  gap: 20px;
   margin-top: 40px;
 }
 
 .game-card {
+  position: relative;
   background-color: white;
-  width: 250px;
+  width: 400px;
+  height: 400px; /* Kartın yüksekliğini artırdık */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .game-card:hover {
-  transform: scale(1.05); /* Hoverda kart biraz büyür */
+  transform: scale(1.05);
 }
 
-.game-card img {
+/* Resim ve İçerik Ayrımı */
+.game-image {
   width: 100%;
-  height: 150px; /* Fotoğrafın yüksekliği */
-  object-fit: cover; /* Fotoğrafın orantılı şekilde kesilmesini sağlar */
+  height: 100%; /* Resim alanının yüksekliği kartın yüksekliğiyle uyumlu olacak */
+  overflow: hidden; /* İçeriğin taşmaması için */
 }
 
-.game-card .card-content {
-  padding: 15px;
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Resmi kapsayıcı alanı tamamen dolduracak şekilde ayarla */
+  display: block; /* Görseldeki boşlukları ortadan kaldırır */
+}
+
+/* Kart içeriği */
+.card-content {
+  position: absolute;
+  top: 5%; /* Kartın üst kısmına yapışacak şekilde */
+  left: 0;
+  width: 100%; /* Kartın tamamını kapsayacak şekilde */
+  height: 100%; /* Kartın tamamını kapsayacak şekilde */
+  color: #333;
+  background-color: #FFDEE9;
+  padding: 20px;
+  border-radius: 8px;
+  display: none; /* Başlangıçta içerik gizli */
   text-align: center;
+  overflow-y: auto; /* İçerik fazla olduğunda kaydırma çubuğu ekler */
 }
 
-.game-card h3 {
-  font-size: 20px;
-  color: #FFDEE9; /* Pembe başlık rengi */
+.card-content h2 {
+  font-size: 24px;
+  color: black;
   margin-bottom: 10px;
 }
 
-.game-card p {
+.card-content h4 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.card-content p {
   font-size: 14px;
-  color: #333;
+  color: black;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Kart Hover Etkileşimi */
+.game-card:hover .card-content {
+  display: block;  /* Yalnızca üzerine gelinen kartın içeriğini göster */
+}
+
+.game-card:hover img {
+  opacity: 0; /* Yalnızca üzerine gelinen karttaki resim kaybolur */
 }
 
 /* Footer */
 footer {
-  background-color: #FFDEE9; /* Çok açık şeker pembesi */
+  background-color: #FFDEE9;
   color: white;
   padding: 20px;
   position: fixed;
