@@ -174,11 +174,11 @@ nav ul li a:hover {
 }
 
 /* Ortak Stil */
-#home, #about-section, #contacts {
+#home, #about-section, #contacts, #how-to-plays {
   padding: 20px;
 }
 
-#home h1, #about-section h1, #contacts h1 {
+#home h1, #about-section h1, #contacts h1, #how-to-plays h1 {
   font-size: 4rem;
   color: #FF8298;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
@@ -192,7 +192,7 @@ nav ul li a:hover {
 
 #home p, .about-section p{
   font-size: 1.2rem;
-  color: #000;
+  color: black;
   max-width: 800px;
   margin: 30px auto;
   line-height: 1.6;
@@ -213,6 +213,99 @@ nav ul li a:hover {
 
 .cta-btn:hover {
   background-color: #CB8298;
+}
+
+#how-to-play {
+  padding: 40px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.how-to-play-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-instructions {
+  width: 45%;
+  min-width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.game-instructions h2 {
+  color: #FF8298;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.game-instructions p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+}
+
+.game-instructions ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.game-instructions ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: black;
+}
+
+.game-instructions {
+  width: 45%;
+  min-width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.game-instructions h2 {
+  color: #FF8298;
+  font-size: 24px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.game-instructions p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+}
+
+.game-instructions ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.game-instructions ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: black;
+}
+
+.game-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 /* Hakkımızda Sayfası - Her Bölüm İçin */
