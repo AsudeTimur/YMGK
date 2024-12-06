@@ -307,7 +307,26 @@ nav ul li a:hover {
   border-radius: 8px;
   margin-bottom: 15px;
 }
+/* Play Button Styling */
+.play-button-container {
+  text-align: center;
+  margin-top: 10px;
+}
 
+.play-button {
+  background-color: #FF8298;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+  background-color: #72CECA;
+}
 /* Hakkımızda Sayfası - Her Bölüm İçin */
 #about {
   padding: 40px 20px;
