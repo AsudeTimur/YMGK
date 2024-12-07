@@ -174,11 +174,11 @@ nav ul li a:hover {
 }
 
 /* Ortak Stil */
-#home, #about-section, #contacts, #how-to-plays {
+#home, #about-section, #contacts, #how-to-plays, #documents{
   padding: 20px;
 }
 
-#home h1, #about-section h1, #contacts h1, #how-to-plays h1 {
+#home h1, #about-section h1, #contacts h1, #how-to-plays h1, #documents {
   font-size: 4rem;
   color: #FF8298;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
@@ -493,6 +493,47 @@ nav ul li a:hover {
   background-color: #CB8298;
 }
 
+/* Section styling */
+#resources {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.resource-card {
+  text-align: center;
+  width: 200px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.resource-card:hover {
+  transform: scale(1.05);
+}
+
+.resource-logo {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.resource-button {
+  background-color: #FF8298;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.resource-button:hover {
+  background-color: #72CECA;
+}
 
 /* Footer */
 footer {
