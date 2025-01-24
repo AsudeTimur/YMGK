@@ -40,9 +40,15 @@ Access the project's official webpage for additional information and features: [
 
 ---
 
-## 📽️ Project Video  
+## 📽️ Project Videos  
 
-Watch the introduction video showcasing YMGK's features and functionality: [Aqua Sky Introduction Video](https://www.youtube.com/watch?v=5zWmBcy3RZI)  
+1. **AquaSky AR Oyunu Nasıl Oynanır?**  
+   Watch the introduction video showcasing AquaSky's features and functionality:  
+   [AquaSky Introduction Video](https://www.youtube.com/watch?v=5zWmBcy3RZI)  
+
+2. **AquaSky AR Oyunu Nasıl Kurulur?**  
+   Learn how to install and set up AquaSky AR game step by step:  
+   [AquaSky Installation Guide](https://www.youtube.com/watch?v=sNcJ6wy4LF0)  
 
 ---
 
